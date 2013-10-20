@@ -1,0 +1,20 @@
+# For manifest.webapp
+AddType application/x-web-app-manifest+json .webapp
+
+# No cache: immediate expiration for webapp manifest.
+ExpiresByType application/x-web-app-manifest+json "access"
+
+# For appcache manifest.
+AddType text/cache-manifest .appcache
+
+# No cache: immediate expiration for appcache manifest.
+ExpiresByType text/cache-manifest "access"
+
+# MIME-types
+AddType application/vnd.apple.mpegurl .m3u8
+AddType application/x-mpegURL .m3u8
+AddType video/ogg .ogv
+AddType video/ogg .ogg
+AddType video/webm .webm
+AddType audio/webm .weba
+AddType video/mp4 .mp4 .m4v

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.rotconsulting.srfpods" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SRFpods</name>
+    <description>
+        Podcasts from the Swiss natîonal TV broadcast station SRF.
+    </description>
+    <author email="androider@wolke7.net" href="http://cordova.io">
+        Koni
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
+</widget>

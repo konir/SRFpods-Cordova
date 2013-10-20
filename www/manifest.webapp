@@ -1,0 +1,21 @@
+{
+    "version":"0.1",
+        "name": "SRFpods",
+    "description": "Mit SRFpods können sie alle Video Podcasts des Schweizer Fernsehens SRF sehen. SRFpods shows all video podcasts of the swiss national TV broadcast station SRF.",
+    "launch_path": "/index.html",
+        "fullscreen": "true",
+    "icons": {
+        "16": "srfpods/icons/SRFpods16x16.png",
+        "32": "srfpods/icons/SRFpods32x32.png",
+        "48": "srfpods/icons/SRFpods48x48.png",
+        "60": "srfpods/icons/SRFpods60x60.png",
+        "90": "srfpods/icons/SRFpods90x90.png",
+        "120": "srfpods/icons/SRFpods120x120.png",
+        "128": "srfpods/icons/SRFpods128x128.png"
+    },
+        "developer": {
+        "name": "Koni",
+        "url": "http://koni.mobi"
+    },
+    "default_locale": "de"
+}
