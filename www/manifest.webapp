@@ -11,7 +11,8 @@
         "60": "srfpods/icons/SRFpods60x60.png",
         "90": "srfpods/icons/SRFpods90x90.png",
         "120": "srfpods/icons/SRFpods120x120.png",
-        "128": "srfpods/icons/SRFpods128x128.png"
+        "128": "srfpods/icons/SRFpods128x128.png",
+        "256": "srfpods/icons/SRFpods256x256.png"
     },
         "developer": {
         "name": "Koni",
