@@ -145,7 +145,7 @@ function openMediaWhenConnected(theUrl){
 
 		} else {
 			//alert('url = '+theUrl);
-			location.href=theUrl;
+			location.href='jwplayer/index.html?stream='+theUrl;
 		}	
 		
 	}
