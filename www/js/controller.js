@@ -1,4 +1,3 @@
-
 // ----------------------------------------------------------------------------------------------
 // Page 1
 //----------------------------------------------------------------------------------------------
@@ -56,7 +55,7 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
 	
     var feed = new google.feeds.Feed(podsUrl);
 	feed.setResultFormat(google.feeds.Feed.MIXED_FORMAT);
-	feed.setNumEntries(50);
+	feed.setNumEntries(20);
 	feed.includeHistoricalEntries();
 
 	feed.load( function(result) {
@@ -74,21 +73,30 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
 		$("#episodenList").empty();
     	for (var i=0; i<showNumberOfPods; i++) {
 			var entry = result.feed.entries[i];
-   	 		var entryUrl = entry.xmlNode.getElementsByTagName("enclosure")[0].getAttribute("url");
-   	 		var entrySize = entry.xmlNode.getElementsByTagName("enclosure")[0].getAttribute("length");
-   	 		var sizeInMB = Math.floor(entrySize / 1000000);
+			var enclosure = entry.xmlNode.getElementsByTagName("enclosure");
+			var entryUrl = '';
    	 		var sizeString = '';
-   	 		if (sizeInMB != 0){
-   	 			sizeString = ' ('+ sizeInMB +' MB)';
-   	 		}
    	 		var contentText = '';
-   	 		if (showTheSummary == 'true'){
-   	 			contentText = entry.content;
+   	 		var urlContainsPlayer = false;
+			if (enclosure.length <= 0){
+				entryUrl = entry.link;
+	   	 		urlContainsPlayer = true;
+			} else {
+				entryUrl = enclosure[0].getAttribute("url");
+	   	 		var entrySize = enclosure[0].getAttribute("length");
+	   	 		var sizeInMB = Math.floor(entrySize / 1000000);
+	   	 		if (sizeInMB != 0){
+	   	 			sizeString = ' ('+ sizeInMB +' MB)';
+	   	 		}
+	   	 		if (showTheSummary == 'true'){
+	   	 			contentText = entry.content;
+	   	 		}
 			}
+//			return;
    	 		   	 		
 			$("#episodenList").append(
 //				    '<li id="list' + i + '"><a data-role="button" class="hide-page-loading-msg" data-ajax="false" target="_blank" href="http://koni.mobi" id="link' + i + '">'+
-			   '<li id="list' + i + '"><a data-role="button" onclick="openMediaWhenConnected(\''+entryUrl+'\')" href="#" id="link' + i + '">'+
+			   '<li id="list' + i + '"><a data-role="button" onclick="openMediaWhenConnected(\''+entryUrl+'\','+ urlContainsPlayer +')" href="#" id="link' + i + '">'+
 			   '<h2>'+entry.title + sizeString+'</h2>'+
                '<p>'+contentText+'</p>'+
 			    '</a>' +
@@ -126,8 +134,8 @@ $(document).on("pageinit", "#page2", function(event) {
 	console.log("End initialize call 2 in Controller");
 });
 
-function openMediaWhenConnected(theUrl){
-	// alert(theUrl);
+function openMediaWhenConnected(theUrl, urlContainsPlayer){
+	//alert(urlContainsPlayer);
 	if (checkInternetConnection()){
 		
 		if (isFirefoxOS()){
@@ -143,8 +151,10 @@ function openMediaWhenConnected(theUrl){
 								}
 					});
 
+		} else if (urlContainsPlayer){
+//			location.href='website.html?stream='+theUrl;
+			location.href=theUrl;
 		} else {
-			//alert('url = '+theUrl);
 			location.href='jwplayer/index.html?stream='+theUrl;
 		}	
 		

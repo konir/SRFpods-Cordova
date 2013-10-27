@@ -10,10 +10,23 @@
 <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
 
 <script type="text/javascript" src="../js/util.js"></script>
-</head>
-<body bgcolor="black">
 
-<div style="background-color: black" id="page1" data-role="page">
+<style type="text/css">
+.fullscreen {
+	background-color: black;
+	position:fixed !important;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+</style>
+
+</head>
+<body class="fullscreen">
+
+<div class="fullscreen" id="page1" data-role="page">
 
 	<div data-role="header" data-theme="a" data-position="fixed">
         <a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Back</a>
