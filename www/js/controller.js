@@ -13,7 +13,11 @@ var AppController = function() {
 		$("#sendungenList").empty();
 		for (var i = 0; i < stations.length; i++) {
 	
-			var url = 'sendung.html?numPods=100&showPodsSummary=true&url='+stations[i].url;
+			var prefix = '';
+			if (isWindowsPhone()){
+				prefix = 'http://koni.mobi/srfpods/';
+			}
+			var url = prefix + 'sendung.html?numPods=100&showPodsSummary=true&url='+stations[i].url;
 			$("#sendungenList").append(
 			    '<li id="list' + i + '"><a data-role="button" data-transition="slide" onclick="openSiteWhenConnected(\''+url+'\')" href="#" id="link' + i + '">'+stations[i].name+'</a>' +
 			    '</li>'
@@ -24,7 +28,7 @@ var AppController = function() {
 
 	return {
 		initialize : function() {
-			console.log("***** showStation");
+			//console.log("***** showStation");
 			showStation();
 		}
 	};
@@ -32,10 +36,10 @@ var AppController = function() {
 
 // Controller aufrufen, wenn pageinit von jQM geworfen wird.
 $(document).on("pagebeforeshow", "#page1", function(event) {
-	console.log("Start initialize call 1 in Controller");
+	//console.log("Start initialize call 1 in Controller");
 	checkInternetConnection();
 	App.controller.initialize();
-	console.log("End initialize call 1 in Controller");
+	//console.log("End initialize call 1 in Controller");
 });
 
 
@@ -110,7 +114,7 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
 
 //Controller aufrufen, wenn pageinit von jQM geworfen wird.
 $(document).on("pageinit", "#page2", function(event) {
-	console.log("Start initialize call 2 in Controller");
+	//console.log("Start initialize call 2 in Controller");
 
 	checkInternetConnection();
 	
@@ -131,7 +135,7 @@ $(document).on("pageinit", "#page2", function(event) {
 	//alert('Pod-Url = '+url);
 	loadPodsByUrl(url, '50', 'true');
 
-	console.log("End initialize call 2 in Controller");
+	//console.log("End initialize call 2 in Controller");
 });
 
 function openMediaWhenConnected(theUrl, urlContainsPlayer){
@@ -151,8 +155,9 @@ function openMediaWhenConnected(theUrl, urlContainsPlayer){
 								}
 					});
 
-		} else if (urlContainsPlayer){
-//			location.href='website.html?stream='+theUrl;
+		} else if (urlContainsPlayer || isWindowsPhone()){
+			//alert('is Windows Phone = '+isWindowsPhone());
+			//alert('URL = '+theUrl);
 			location.href=theUrl;
 		} else {
 			location.href='jwplayer/index.html?stream='+theUrl;

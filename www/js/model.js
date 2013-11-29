@@ -7,7 +7,7 @@ var Station = Class.extend({
         this.name = name;
         this.url = url;
         this.country = country;
-        console.log("class Station in model");
+        //console.log("class Station in model");
     },
 });  
 
@@ -16,7 +16,7 @@ var Stations = Class.extend({
     init: function () {
         this.stationsArray = new Array();
         this.currentStation = 0;
-        console.log("class Stations in model");
+        //console.log("class Stations in model");
     },
 
     // Erzeugt eine Station und fuegt dieses hinzu.
@@ -36,7 +36,7 @@ var Stations = Class.extend({
 
     getCurrentStation: function () {
         return this.stationsArray[this.currentStation];
-        console.log("getCurrentStation=" + this.currentStation);
+        //console.log("getCurrentStation=" + this.currentStation);
 
         //return this.currentLocation;
     },

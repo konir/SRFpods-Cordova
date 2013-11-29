@@ -33,10 +33,10 @@ App.stations.createStation("./img/tele_baern.png", "Dok - Aequator", "http://fee
 App.stations.createStation("./img/tele_baern.png", "Dok - Auf und davon", "http://feeds.sf.tv/podcast/aufunddavon", "CH");
 App.stations.createStation("./img/tele_baern.png", "Dok - Donau", "http://feeds.sf.tv/podcast/donau", "CH");
 App.stations.createStation("./img/tele_baern.png", "Dok - Fortsetzung folgt", "http://feeds.sf.tv/podcast/fortsetzungfolgt", "CH");
-App.stations.createStation("./img/tele_baern.png", "Dok - Heiraten", "http://feeds.sf.tv/podcast/heiraten", "CH");
+App.stations.createStation("./img/tele_baern.png", "Dok - Ja ich will (Heiraten)", "http://feeds.sf.tv/podcast/heiraten", "CH");
 App.stations.createStation("./img/tele_baern.png", "Dok - Kriminalfälle", "http://feeds.sf.tv/podcast/kriminalfaelle", "CH");
 App.stations.createStation("./img/tele_baern.png", "Dok - Seidenstrasse", "http://feeds.sf.tv/podcast/seidenstrasse", "CH");
-App.stations.createStation("./img/tele_baern.png", "Donnschtigjass", "http://feeds.sf.tv/podcast/donnschtigjass", "CH");
+App.stations.createStation("./img/tele_baern.png", "Donnschtig-Jass", "http://feeds.sf.tv/podcast/donnschtigjass", "CH");
 App.stations.createStation("./img/tele_baern.png", "Don't say it - bring it!", "http://feeds.sf.tv/podcast/dontsayitbringit", "CH");
 App.stations.createStation("./img/tele_baern.png", "Durch die Blume", "http://feeds.sf.tv/podcast/durchdieblume", "CH");
 App.stations.createStation("./img/tele_baern.png", "ECO", "http://feeds.sf.tv/podcast/eco", "CH");
@@ -44,7 +44,7 @@ App.stations.createStation("./img/tele_baern.png", "Einstein", "http://feeds.sf.
 App.stations.createStation("./img/tele_baern.png", "Focus", "http://feeds.sf.tv/podcast/focus", "CH");
 App.stations.createStation("./img/tele_baern.png", "Giacobbo / Müller", "http://feeds.sf.tv/podcast/giacobbomueller", "CH");
 App.stations.createStation("./img/tele_baern.png", "Glanz & Gloria", "http://feeds.sf.tv/podcast/glanzundgloria", "CH");
-App.stations.createStation("./img/tele_baern.png", "Happy day", "http://feeds.sf.tv/podcast/happyday", "CH");
+App.stations.createStation("./img/tele_baern.png", "Happy Day", "http://feeds.sf.tv/podcast/happyday", "CH");
 App.stations.createStation("./img/tele_baern.png", "Jobtausch", "http://feeds.sf.tv/podcast/jobtausch", "CH");
 App.stations.createStation("./img/tele_baern.png", "Kassensturz", "http://feeds.sf.tv/podcast/kassensturz", "CH");
 App.stations.createStation("./img/tele_baern.png", "Kulturplatz", "http://feeds.sf.tv/podcast/kulturplatz", "CH");
@@ -72,14 +72,14 @@ App.stations.createStation("./img/tele_baern.png", "Schwiizer Chuchi mit Ivo Ada
 App.stations.createStation("./img/tele_baern.png", "Sportlounge", "http://feeds.sf.tv/podcast/sportlounge", "CH");
 App.stations.createStation("./img/tele_baern.png", "SRF bi de Lüt", "http://feeds.sf.tv/podcast/sfbideluet", "CH");
 App.stations.createStation("./img/tele_baern.png", "SRF bi de Lüt - Live", "http://feeds.sf.tv/podcast/sfbideluetlive", "CH");
-App.stations.createStation("./img/tele_baern.png", "Street Games", "http://feeds.sf.tv/podcast/streetgames", "CH");
 App.stations.createStation("./img/tele_baern.png", "Stars", "http://feeds.sf.tv/podcast/stars", "CH");
 App.stations.createStation("./img/tele_baern.png", "Sternstunde Kunst", "http://feeds.sf.tv/podcast/sternstundekunst", "CH");
 App.stations.createStation("./img/tele_baern.png", "Sternstunde Philosophie", "http://feeds.sf.tv/podcast/sternstundephilosophie", "CH");
 App.stations.createStation("./img/tele_baern.png", "Sternstunde Religion", "http://feeds.sf.tv/podcast/sternstundereligion", "CH");
+App.stations.createStation("./img/tele_baern.png", "Street Games", "http://feeds.sf.tv/podcast/streetgames", "CH");
 App.stations.createStation("./img/tele_baern.png", "Svizra rumantscha", "http://feeds.sf.tv/podcast/svizrarumantscha", "CH");
 App.stations.createStation("./img/tele_baern.png", "SwissDinner", "http://www.telezueri.ch/sites/default/files/podcast_437_itunes.rss", "CH");
-App.stations.createStation("./img/tele_baern.png", "Tacho", "http://feeds.sf.tv/podcast/tacho", "CH");
+App.stations.createStation("./img/tele_baern.png", "Tacho - das Automagazin", "http://feeds.sf.tv/podcast/tacho", "CH");
 App.stations.createStation("./img/tele_baern.png", "Tagesschau", "http://feeds.sf.tv/podcast/ts20", "CH");
 App.stations.createStation("./img/tele_baern.png", "Telesguard", "http://feeds.sf.tv/podcast/telesguard", "CH");
 App.stations.createStation("./img/tele_baern.png", "Tierische Freunde", "http://feeds.sf.tv/podcast/tierischefreunde", "CH");
@@ -88,6 +88,6 @@ App.stations.createStation("./img/tele_baern.png", "Tschanz mit allem", "http://
 App.stations.createStation("./img/tele_baern.png", "Twist - Die Sketch Comedy", "http://feeds.sf.tv/podcast/twist", "CH");
 App.stations.createStation("./img/tele_baern.png", "Üse Zoo", "http://feeds.sf.tv/podcast/uesezoo", "CH");
 App.stations.createStation("./img/tele_baern.png", "Top shots", "http://feeds.sf.tv/podcast/topshots", "CH");
-App.stations.createStation("./img/tele_baern.png", "Virus", "http://feeds.sf.tv/podcast/virus", "CH");
+App.stations.createStation("./img/tele_baern.png", "Virus TV", "http://feeds.sf.tv/podcast/virus", "CH");
 App.stations.createStation("./img/tele_baern.png", "Winter-Challenge", "http://feeds.sf.tv/podcast/winterchallenge", "CH");
 App.stations.createStation("./img/tele_baern.png", "Wort zum Sonntag", "http://feeds.sf.tv/podcast/wortzumsonntag", "CH");

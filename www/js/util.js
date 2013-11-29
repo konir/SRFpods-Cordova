@@ -10,15 +10,6 @@ function gup(name) {
 		return results[1];
 }
 
-function isFirefoxOS(){
-	var userAgentFFos = "Mozilla/5.0 (Mobile; rv:";
-	var userAgent = navigator.userAgent;
-	//alert(userAgent);
-	if (userAgent.indexOf(userAgentFFos) != -1){
-		return true;
-	}
-	return false;
-}
 function checkInternetConnection() {
 	var isOnLine = navigator.onLine;
 	if (isOnLine) {
@@ -42,14 +33,35 @@ function doesConnectionExist() {
         xhr.send();
          
         if (xhr.status >= 200 && xhr.status < 304) {
-        	alert('Connected !!!');
+        	//alert('Connected !!!');
             return true;
         } else {
-        	alert('NOT Connected !!!');
+        	//alert('NOT Connected !!!');
             return false;
         }
     } catch (e) {
-    	alert('NOT Connected - with exception !!: '+e);
+    	//alert('NOT Connected - with exception !!: '+e);
     	return false;
     }
+}
+
+function isFirefoxOS(){
+	return isUserAgent("Mozilla/5.0 (Mobile; rv:");
+}
+
+function isWindowsPhone(){
+	return isUserAgent("Windows Phone");
+}
+
+function isAndroidOS(){
+	return isUserAgent("Android");
+}
+
+function isUserAgent(userAgentString){
+	var userAgent = navigator.userAgent;
+	//alert(userAgent);
+	if (userAgent.indexOf(userAgentString) != -1){
+		return true;
+	}
+	return false;
 }

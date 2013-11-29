@@ -34,17 +34,19 @@
 	</div><!-- /header -->
 
 	<div style="background-color: black" data-role="content">	
-		<div id="thePlayer">Loading Player...</div>
+		<div id="thePlayer" style="background-color:black; width: 100%; height: 100%">Loading Player...</div>
 		<script type="text/javascript">
 			var streamURL = gup('stream');
 			//var streamURL = "http://podcastsource.sf.tv/nps/247248185/1489.68/10vor10+vom+22.10.2013/podcast/10vor10/2013/10/10vor10_20131022_215000_v_podcast_h264_q10.mp4";
-			var w=window.innerWidth-10;
-			var h=window.innerHeight-70;
-		    jwplayer("thePlayer").setup({
+			//var w=window.innerWidth-10;
+			//var h=window.innerHeight-70;
+		    var h=$(window).height() - 60;
+		    var w=$(window).width();
+			jwplayer("thePlayer").setup({
 		        file: streamURL,
-		        image: "http://koni.mobi/srfpods/icons/SRFpods256x256.png",
-		        height: h,
 		        width: w,
+		        height: h,
+		        image: "http://koni.mobi/srfpods/icons/SRFpods256x256.png",
 		        autostart: true
 		    });
 		</script>
