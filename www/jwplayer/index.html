@@ -11,6 +11,10 @@
 
 <script type="text/javascript" src="../js/util.js"></script>
 
+<script type="text/javascript">
+	var streamURL = gup('stream');
+</script>
+
 <style type="text/css">
 .fullscreen {
 	background-color: black;
@@ -31,12 +35,13 @@
 	<div data-role="header" data-theme="a" data-position="fixed">
         <a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Back</a>
  		<h1>SRFpods</h1>
+        <a href="javascript:location.href=streamURL;" data-role="button">Download</a>
 	</div><!-- /header -->
 
 	<div style="background-color: black" data-role="content">	
 		<div id="thePlayer" style="background-color:black; width: 100%; height: 100%">Loading Player...</div>
 		<script type="text/javascript">
-			var streamURL = gup('stream');
+			//var streamURL = gup('stream');
 			//var streamURL = "http://podcastsource.sf.tv/nps/247248185/1489.68/10vor10+vom+22.10.2013/podcast/10vor10/2013/10/10vor10_20131022_215000_v_podcast_h264_q10.mp4";
 			//var w=window.innerWidth-10;
 			//var h=window.innerHeight-70;
