@@ -58,6 +58,7 @@ App.stations.createStation("./img/tele_baern.png", "Myriam und die Meisterbäcke
 App.stations.createStation("./img/tele_baern.png", "myStory", "http://feeds.sf.tv/podcast/mystory", "CH");
 App.stations.createStation("./img/tele_baern.png", "myZambo", "http://feeds.sf.tv/podcast/myzambo", "CH");
 App.stations.createStation("./img/tele_baern.png", "Nachtwach", "http://pod.drs.ch/nachtwach_mpx.xml", "CH");
+App.stations.createStation("./img/tele_baern.png", "Netz Natur", "http://www.srf.ch/player/tv/rss/sendung?id=7225ec3b-e259-4af1-b9b0-31b293c70763", "CH");
 App.stations.createStation("./img/tele_baern.png", "Oli Mega Vlog", "http://feeds.sf.tv/podcast/oli", "CH");
 App.stations.createStation("./img/tele_baern.png", "Pimp it or kick it", "http://feeds.sf.tv/podcast/pimpitorkickit", "CH");
 App.stations.createStation("./img/tele_baern.png", "Potzmusig", "http://feeds.sf.tv/podcast/potzmusig", "CH");
