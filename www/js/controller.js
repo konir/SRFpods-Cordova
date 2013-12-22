@@ -155,7 +155,11 @@ function openMediaWhenConnected(theUrl, urlContainsPlayer){
 								}
 					});
 
-		} else if (urlContainsPlayer || isWindowsPhone()){
+		} else if (urlContainsPlayer || isWindowsPhone() || isAmazonDevice()){
+			if (isAmazonDevice()){
+				alert('Be sure to have a player installed like \'MX Player\' or \'Live Media Player\' to play the video.\n\n If you don\'t have a player the big video will be downloaded now !');
+			}
+			//alert('is Amazon Device = '+isAmazonDevice());
 			//alert('is Windows Phone = '+isWindowsPhone());
 			//alert('URL = '+theUrl);
 			location.href=theUrl;

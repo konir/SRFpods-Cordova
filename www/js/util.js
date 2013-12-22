@@ -57,6 +57,10 @@ function isAndroidOS(){
 	return isUserAgent("Android");
 }
 
+function isAmazonDevice(){
+	return isUserAgent("Amazon");
+}
+
 function isUserAgent(userAgentString){
 	var userAgent = navigator.userAgent;
 	//alert(userAgent);
