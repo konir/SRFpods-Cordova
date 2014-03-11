@@ -28,7 +28,7 @@ var AppController = function() {
 
 	return {
 		initialize : function() {
-			//console.log("***** showStation");
+			// console.log("***** showStation");
 			showStation();
 		}
 	};
@@ -36,21 +36,21 @@ var AppController = function() {
 
 // Controller aufrufen, wenn pageinit von jQM geworfen wird.
 $(document).on("pagebeforeshow", "#page1", function(event) {
-	//console.log("Start initialize call 1 in Controller");
+	// console.log("Start initialize call 1 in Controller");
 	checkInternetConnection();
 	App.controller.initialize();
-	//console.log("End initialize call 1 in Controller");
+	// console.log("End initialize call 1 in Controller");
 });
 
 
 // ----------------------------------------------------------------------------------------------
 // Page 2
-//----------------------------------------------------------------------------------------------
-/***************************************
- *	Loads all episodes of a single show
- *************************************** */
+// ----------------------------------------------------------------------------------------------
+/*******************************************************************************
+ * Loads all episodes of a single show
+ ******************************************************************************/
 function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
-	//alert('pods url 2 = '+podsUrl);
+	// alert('pods url 2 = '+podsUrl);
 
 	var showTheSummary = 'true';
 	if (showPodsSummary == 'true' || showPodsSummary == 'false'){
@@ -69,10 +69,10 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
 			showNumberOfPods = numPods;
 		} else {
 			showNumberOfPods = result.feed.entries.length;
-			//alert('feed.entries.length = '+showNumberOfPods);
+			// alert('feed.entries.length = '+showNumberOfPods);
 		}
 
-		//alert('showNumberOfPods = '+showNumberOfPods);
+		// alert('showNumberOfPods = '+showNumberOfPods);
 				
 		$("#episodenList").empty();
     	for (var i=0; i<showNumberOfPods; i++) {
@@ -83,9 +83,13 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
    	 		var contentText = '';
    	 		var urlContainsPlayer = false;
 			if (enclosure.length <= 0){
-				entryUrl = entry.link;
+				// alert('enclosure.length='+enclosure.length+' /
+				// enclosure='+enclosure+' / Link='+entry.link);
+				entryUrl = 'http://srf.ch'+entry.link;
 	   	 		urlContainsPlayer = true;
 			} else {
+				// alert('enclosure.length='+enclosure.length+' /
+				// URL='+enclosure[0].getAttribute("url"));
 				entryUrl = enclosure[0].getAttribute("url");
 	   	 		var entrySize = enclosure[0].getAttribute("length");
 	   	 		var sizeInMB = Math.floor(entrySize / 1000000);
@@ -94,12 +98,19 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
 	   	 		}
 	   	 		if (showTheSummary == 'true'){
 	   	 			contentText = entry.content;
+	   	 			//alert('contentText='+contentText);
+	   	 			//alert('ul index= '+contentText.indexOf("<ul>"));
+	   	 			if(contentText.indexOf("<ul>") >= 0){
+	   	 				contentText="";
+	   	 			}
 	   	 		}
 			}
-//			return;
+// return;
    	 		   	 		
 			$("#episodenList").append(
-//				    '<li id="list' + i + '"><a data-role="button" class="hide-page-loading-msg" data-ajax="false" target="_blank" href="http://koni.mobi" id="link' + i + '">'+
+// '<li id="list' + i + '"><a data-role="button" class="hide-page-loading-msg"
+// data-ajax="false" target="_blank" href="http://koni.mobi" id="link' + i +
+// '">'+
 			   '<li id="list' + i + '"><a data-role="button" onclick="openMediaWhenConnected(\''+entryUrl+'\','+ urlContainsPlayer +')" href="#" id="link' + i + '">'+
 			   '<h2>'+entry.title + sizeString+'</h2>'+
                '<p>'+contentText+'</p>'+
@@ -112,19 +123,19 @@ function loadPodsByUrl(podsUrl, numPods, showPodsSummary) {
 	});
 }
 
-//Controller aufrufen, wenn pageinit von jQM geworfen wird.
+// Controller aufrufen, wenn pageinit von jQM geworfen wird.
 $(document).on("pageinit", "#page2", function(event) {
-	//console.log("Start initialize call 2 in Controller");
+	// console.log("Start initialize call 2 in Controller");
 
 	checkInternetConnection();
 	
 	var url = $(this).data("url").split("&")[2];
 	if (url == null || url == 'undefined'){
 		url = gup('url');
-		//alert('gup url = '+ url);		
+		// alert('gup url = '+ url);
 	} else {
 		url = url.replace("url=","");  
-		//alert('replace url = '+url);
+		// alert('replace url = '+url);
 	}
 
 	// if url still undefined then go to previous page
@@ -132,10 +143,10 @@ $(document).on("pageinit", "#page2", function(event) {
 		alert('url undefined. Going back...');
 		window.location.href='index.html';
 	}
-	//alert('Pod-Url = '+url);
+	// alert('Pod-Url = '+url);
 	loadPodsByUrl(url, '50', 'true');
 
-	//console.log("End initialize call 2 in Controller");
+	// console.log("End initialize call 2 in Controller");
 });
 
 function openMediaWhenConnected(theUrl, urlContainsPlayer){
@@ -155,7 +166,7 @@ function openMediaWhenConnected(theUrl, urlContainsPlayer){
 								}
 					});
 
-		} else if (urlContainsPlayer || isWindowsPhone() || isAmazonDevice()){
+		} else if (isWindowsPhone() || isAmazonDevice()){
 			if (isAmazonDevice()){
 				alert('Be sure to have a player installed like \'MX Player\' or \'Live Media Player\' to play the video.\n\n If you don\'t have a player the big video will be downloaded now !');
 			}
@@ -163,6 +174,16 @@ function openMediaWhenConnected(theUrl, urlContainsPlayer){
 			//alert('is Windows Phone = '+isWindowsPhone());
 			//alert('URL = '+theUrl);
 			location.href=theUrl;
+		} else if (urlContainsPlayer) {
+			// Hack for Meteo and same RSS...
+			startIndex = theUrl.indexOf("/video/");
+			//alert('startIndex = '+startIndex);
+			if (startIndex >=0){
+				theUrl = theUrl.replace("/video/", "/videoembed/");
+				theUrl = theUrl +"&autoplay=true";
+			}
+
+			location.href='website.html?&url='+theUrl;			
 		} else {
 			location.href='jwplayer/index.html?stream='+theUrl;
 		}	
@@ -173,7 +194,7 @@ function openMediaWhenConnected(theUrl, urlContainsPlayer){
 function openSiteWhenConnected(theUrl){
 	// alert(theUrl);
 	if (checkInternetConnection()){
-			//alert('url = '+theUrl);
+			// alert('url = '+theUrl);
 			location.href=theUrl;
 	}
 }

@@ -45,6 +45,7 @@ App.stations.createStation("./img/tele_baern.png", "Focus", "http://feeds.sf.tv/
 App.stations.createStation("./img/tele_baern.png", "Giacobbo / Müller", "http://feeds.sf.tv/podcast/giacobbomueller", "CH");
 App.stations.createStation("./img/tele_baern.png", "Glanz & Gloria", "http://feeds.sf.tv/podcast/glanzundgloria", "CH");
 App.stations.createStation("./img/tele_baern.png", "Happy Day", "http://feeds.sf.tv/podcast/happyday", "CH");
+App.stations.createStation("./img/tele_baern.png", "Horizonte", "http://www.srf.ch/player/tv/rss/sendung?id=79f6e570-c577-4391-9871-c0893b948899", "CH");
 App.stations.createStation("./img/tele_baern.png", "Jobtausch", "http://feeds.sf.tv/podcast/jobtausch", "CH");
 App.stations.createStation("./img/tele_baern.png", "Kassensturz", "http://feeds.sf.tv/podcast/kassensturz", "CH");
 App.stations.createStation("./img/tele_baern.png", "Kulturplatz", "http://feeds.sf.tv/podcast/kulturplatz", "CH");
